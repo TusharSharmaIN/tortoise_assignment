@@ -27,7 +27,7 @@ class ExpansionButton extends StatelessWidget {
 
   factory ExpansionButton.caretCircle({
     required bool isExpanded,
-    iconColor = BaseColors.darkGreen,
+    iconColor = BaseColors.primaryGreen,
   }) => ExpansionButton(
     isExpanded: isExpanded,
     expandedIcon: PhosphorIconsFill.caretCircleUp,

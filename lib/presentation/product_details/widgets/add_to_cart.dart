@@ -5,8 +5,18 @@ class AddToCart extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
+    return Container(
       padding: const EdgeInsets.fromLTRB(24, 16, 24, 4),
+      decoration: BoxDecoration(
+        color: BaseColors.backGroundWhite,
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withValues(alpha: 0.1),
+            blurRadius: 6,
+            offset: const Offset(0, -3),
+          ),
+        ],
+      ),
       child: Column(
         spacing: 12,
         children: [

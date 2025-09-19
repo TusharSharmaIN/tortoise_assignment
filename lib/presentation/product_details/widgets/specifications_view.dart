@@ -6,13 +6,13 @@ class SpecificationsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 24),
-      child: BlocBuilder<ProductBloc, ProductState>(
-        buildWhen: (previous, current) =>
-            previous.isSpecificationExpanded != current.isSpecificationExpanded,
-        builder: (context, state) {
-          return Column(
+    return BlocBuilder<ProductBloc, ProductState>(
+      buildWhen: (previous, current) =>
+          previous.isSpecificationExpanded != current.isSpecificationExpanded,
+      builder: (context, state) {
+        return Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 24),
+          child: Column(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -23,47 +23,75 @@ class SpecificationsView extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 12),
-              AnimatedSwitcher(
-                duration: const Duration(milliseconds: 300),
-                transitionBuilder: (Widget child, Animation<double> animation) {
-                  return SizeTransition(
-                    sizeFactor: animation,
-                    axis: Axis.vertical,
-                    child: child,
-                  );
-                },
-                child: state.isSpecificationExpanded
-                    ? ShowSpecifications(specifications: specifications)
-                    : ShowSpecifications(
-                        specifications: specifications,
-                        limit: 2,
-                      ),
-              ),
-              ListTile(
-                contentPadding: EdgeInsets.zero,
-                dense: true,
-                splashColor: BaseColors.transparent,
-                onTap: () {
-                  context.read<ProductBloc>().add(
-                    const ProductEvent.onExpandToggled(
-                      type: ExpansionType.specifications,
+              Container(
+                decoration: BoxDecoration(
+                  color: BaseColors.white,
+                  borderRadius: BorderRadius.circular(16),
+                  border: Border.all(color: BaseColors.borderGrey, width: 1),
+                  boxShadow: [
+                    BoxShadow(
+                      color: BaseColors.black.withValues(alpha: 0.05),
+                      blurRadius: 4,
+                      offset: const Offset(0, 2),
                     ),
-                  );
-                },
-                title: Text(
-                  state.isSpecificationExpanded ? 'Show Less' : 'View More',
-                  style: BaseTextStyles.textSemiMediumBold.copyWith(
-                    color: BaseColors.primaryGreen,
-                  ),
+                  ],
                 ),
-                trailing: ExpansionButton.caretCircle(
-                  isExpanded: state.isSpecificationExpanded,
+                child: Column(
+                  children: [
+                    AnimatedSwitcher(
+                      duration: const Duration(milliseconds: 300),
+                      transitionBuilder:
+                          (Widget child, Animation<double> animation) {
+                            return SizeTransition(
+                              sizeFactor: animation,
+                              axis: Axis.vertical,
+                              child: child,
+                            );
+                          },
+                      child: state.isSpecificationExpanded
+                          ? ShowSpecifications(specifications: specifications)
+                          : ShowSpecifications(
+                              specifications: specifications,
+                              limit: 2,
+                            ),
+                    ),
+                    const Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 16),
+                      child: Divider(height: 1, color: BaseColors.grey2),
+                    ),
+                    ListTile(
+                      contentPadding: const EdgeInsets.only(
+                        left: 16,
+                        right: 14,
+                      ),
+                      dense: true,
+                      splashColor: BaseColors.transparent,
+                      onTap: () {
+                        context.read<ProductBloc>().add(
+                          const ProductEvent.onExpandToggled(
+                            type: ExpansionType.specifications,
+                          ),
+                        );
+                      },
+                      title: Text(
+                        state.isSpecificationExpanded
+                            ? 'Less Details'
+                            : 'More Details',
+                        style: BaseTextStyles.textSemiMediumBold.copyWith(
+                          color: BaseColors.primaryGreen,
+                        ),
+                      ),
+                      trailing: ExpansionButton.caretCircle(
+                        isExpanded: state.isSpecificationExpanded,
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ],
-          );
-        },
-      ),
+          ),
+        );
+      },
     );
   }
 }
@@ -81,11 +109,6 @@ class ShowSpecifications extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-      decoration: BoxDecoration(
-        color: BaseColors.white,
-        borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: BaseColors.borderGrey, width: 1),
-      ),
       child: ListView.builder(
         itemCount: specifications.length > limit && limit != -1
             ? limit

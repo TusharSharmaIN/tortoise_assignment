@@ -9,8 +9,20 @@ class ImageBanner extends StatelessWidget {
       buildWhen: (previous, current) =>
           previous.isImageBannerExpanded != current.isImageBannerExpanded,
       builder: (context, state) {
-        return Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 24),
+        return Container(
+          padding: const EdgeInsets.symmetric(horizontal: 2),
+          margin: const EdgeInsets.symmetric(horizontal: 24),
+          decoration: BoxDecoration(
+            color: BaseColors.white,
+            borderRadius: BorderRadius.circular(16),
+            boxShadow: [
+              BoxShadow(
+                color: BaseColors.black.withValues(alpha: 0.05),
+                blurRadius: 4,
+                offset: const Offset(0, 2),
+              ),
+            ],
+          ),
           child: Column(
             children: [
               AnimatedSwitcher(
@@ -35,7 +47,7 @@ class ImageBanner extends StatelessWidget {
                       ),
               ),
               ListTile(
-                contentPadding: EdgeInsets.zero,
+                contentPadding: const EdgeInsets.symmetric(horizontal: 8),
                 dense: true,
                 splashColor: BaseColors.transparent,
                 onTap: () {
