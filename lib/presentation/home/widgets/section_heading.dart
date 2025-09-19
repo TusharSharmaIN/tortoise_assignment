@@ -9,7 +9,7 @@ class SectionHeading extends StatelessWidget {
     return Align(
       alignment: Alignment.centerLeft,
       child: Text(
-        heading,
+        heading.toUpperCase(),
         style: BaseTextStyles.textLargeBold.copyWith(color: BaseColors.black),
       ),
     );

@@ -23,5 +23,6 @@
       "editor.guides.indentation": true,
       "editor.defaultFormatter": "Dart-Code.dart-code"
     },
-    "dart.flutterSdkPath": ".fvm/versions/3.32.7"
+    "dart.flutterSdkPath": ".fvm/versions/3.32.7",
+    "editor.wordWrap": "on"
   }

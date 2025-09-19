@@ -18,7 +18,17 @@ class ProductEvent with _$ProductEvent {
 
   const factory ProductEvent.onColorSelected({required int index}) =
       _OnColorSelected;
-  
+
   const factory ProductEvent.onStorageSelected({required int index}) =
       _OnStorageSelected;
+
+  const factory ProductEvent.onExpandToggled({required ExpansionType type}) =
+      _OnExpandToggled;
+
+  const factory ProductEvent.onResetFlow({required FlowType flow}) =
+      _OnResetFlow;
 }
+
+enum ExpansionType { specifications, imageBanner, effectivePrice }
+
+enum FlowType { productDetails, effectivePrice }

@@ -49,6 +49,44 @@ class ProductBloc extends Bloc<ProductEvent, ProductState> {
       onStorageSelected: (e) {
         emit(state.copyWith(selectedStorageIndex: e.index));
       },
+      onExpandToggled: (e) {
+        switch (e.type) {
+          case ExpansionType.specifications:
+            emit(
+              state.copyWith(
+                isSpecificationExpanded: !state.isSpecificationExpanded,
+              ),
+            );
+          case ExpansionType.imageBanner:
+            emit(
+              state.copyWith(
+                isImageBannerExpanded: !state.isImageBannerExpanded,
+              ),
+            );
+          case ExpansionType.effectivePrice:
+            emit(
+              state.copyWith(
+                isEffectivePriceExpanded: !state.isEffectivePriceExpanded,
+              ),
+            );
+        }
+      },
+      onResetFlow: (e) {
+        switch (e.flow) {
+          case FlowType.productDetails:
+            emit(
+              state.copyWith(
+                currentProductImageIndex: 0,
+                selectedColorIndex: 0,
+                selectedStorageIndex: 0,
+                isSpecificationExpanded: false,
+                isImageBannerExpanded: false,
+              ),
+            );
+          case FlowType.effectivePrice:
+            emit(state.copyWith(isEffectivePriceExpanded: true));
+        }
+      },
     );
   }
 }

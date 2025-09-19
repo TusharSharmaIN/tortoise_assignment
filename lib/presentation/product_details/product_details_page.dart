@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:go_router/go_router.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
 import 'package:tortoise_assignment/application/product/product_bloc.dart';
 import 'package:tortoise_assignment/domain/product/entities/product.dart';
 import 'package:tortoise_assignment/presentation/core/utils/assets.dart';
 import 'package:tortoise_assignment/presentation/core/widgets/custom_app_bar.dart';
+import 'package:tortoise_assignment/presentation/core/widgets/custom_dotted_line.dart';
+import 'package:tortoise_assignment/presentation/core/widgets/expansion_button.dart';
 import 'package:tortoise_assignment/presentation/theme/base_colors.dart';
 import 'package:tortoise_assignment/presentation/theme/base_text_styles.dart';
 
@@ -14,6 +17,10 @@ part 'widgets/product_image_carousel.dart';
 part 'widgets/protected_with_tortoise.dart';
 part 'widgets/pick_color.dart';
 part 'widgets/pick_storage.dart';
+part 'widgets/image_banner.dart';
+part 'widgets/specifications_view.dart';
+part 'widgets/add_to_cart.dart';
+part 'effective_price_sheet/effective_price_sheet.dart';
 
 class ProductDetailsPage extends StatefulWidget {
   const ProductDetailsPage({super.key, required this.product});
@@ -28,7 +35,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
   void initState() {
     super.initState();
     context.read<ProductBloc>().add(
-      const ProductEvent.onProductImageSlide(index: 0),
+      const ProductEvent.onResetFlow(flow: FlowType.productDetails),
     );
   }
 
@@ -48,6 +55,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
               ),
             ),
             ProductDetailsPageWidget(product: widget.product),
+            const AddToCart(),
           ],
         ),
       ),
@@ -74,6 +82,10 @@ class ProductDetailsPageWidget extends StatelessWidget {
             PickColor(colorOptions: product.colorOptions),
             const SizedBox(height: 16),
             PickStorage(storageOptions: product.storageOptions),
+            const SizedBox(height: 16),
+            SpecificationsView(specifications: product.specifications),
+            const SizedBox(height: 16),
+            const ImageBanner(),
             const SizedBox(height: 16),
           ],
         ),

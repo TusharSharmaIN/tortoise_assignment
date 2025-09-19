@@ -3,21 +3,13 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:tortoise_assignment/presentation/theme/base_colors.dart';
 
 abstract class BaseTextStyles {
-  // static TextStyle textExtraSmallRegular = GoogleFonts.inter(
-  //   textStyle: const TextStyle(
-  //     fontSize: 10,
-  //     fontWeight: FontWeight.w400,
-  //     color: BaseColors.black,
-  //   ),
-  // );
-
-  // static TextStyle textSmallRegular = GoogleFonts.inter(
-  //   textStyle: const TextStyle(
-  //     fontSize: 12,
-  //     fontWeight: FontWeight.w400,
-  //     color: BaseColors.black,
-  //   ),
-  // );
+  static TextStyle textSmallRegular = GoogleFonts.inter(
+    textStyle: const TextStyle(
+      fontSize: 12,
+      fontWeight: FontWeight.w400,
+      color: BaseColors.black,
+    ),
+  );
 
   static TextStyle textSmallSemiBold = GoogleFonts.inter(
     textStyle: const TextStyle(
@@ -27,7 +19,7 @@ abstract class BaseTextStyles {
     ),
   );
 
-  // TODO: rename to haffer font
+  // TODO: This should be Haffer Font, but not available in Google Fonts
   static TextStyle textSmallBold = GoogleFonts.inter(
     textStyle: const TextStyle(
       fontSize: 12,
@@ -40,6 +32,14 @@ abstract class BaseTextStyles {
     textStyle: const TextStyle(
       fontSize: 13,
       fontWeight: FontWeight.w500,
+      color: BaseColors.black,
+    ),
+  );
+
+  static TextStyle textSemiMediumBold = GoogleFonts.inter(
+    textStyle: const TextStyle(
+      fontSize: 13,
+      fontWeight: FontWeight.w600,
       color: BaseColors.black,
     ),
   );
@@ -76,13 +76,14 @@ abstract class BaseTextStyles {
     ),
   );
 
-  // static TextStyle textExtraLargeRegular = GoogleFonts.inter(
-  //   textStyle: const TextStyle(
-  //     fontSize: 18,
-  //     fontWeight: FontWeight.w400,
-  //     color: BaseColors.black,
-  //   ),
-  // );
+  // TODO: This should be Haffer Font, but not available in Google Fonts
+  static TextStyle textExtraLargeBold = GoogleFonts.inter(
+    textStyle: const TextStyle(
+      fontSize: 18,
+      fontWeight: FontWeight.w600,
+      color: BaseColors.black,
+    ),
+  );
 
   static TextStyle textHugeBold = GoogleFonts.inter(
     textStyle: const TextStyle(
@@ -91,12 +92,4 @@ abstract class BaseTextStyles {
       color: BaseColors.black,
     ),
   );
-
-  // static TextStyle textGiantRegular = GoogleFonts.inter(
-  //   textStyle: const TextStyle(
-  //     fontSize: 24,
-  //     fontWeight: FontWeight.w400,
-  //     color: BaseColors.black,
-  //   ),
-  // );
 }

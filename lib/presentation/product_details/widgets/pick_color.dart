@@ -13,7 +13,7 @@ class PickColor extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'Finish',
+            'Finish'.toUpperCase(),
             style: BaseTextStyles.textSmallBold.copyWith(
               color: BaseColors.slateGrey,
             ),

@@ -11,6 +11,9 @@ abstract class ProductState with _$ProductState {
     required int currentProductImageIndex,
     required int selectedColorIndex,
     required int selectedStorageIndex,
+    required bool isSpecificationExpanded,
+    required bool isImageBannerExpanded,
+    required bool isEffectivePriceExpanded,
   }) = _ProductState;
 
   factory ProductState.initial() => ProductState(
@@ -20,6 +23,9 @@ abstract class ProductState with _$ProductState {
     currentProductImageIndex: 0,
     selectedColorIndex: 0,
     selectedStorageIndex: 0,
+    isSpecificationExpanded: false,
+    isImageBannerExpanded: false,
+    isEffectivePriceExpanded: false,
   );
 
   List<Brand> get brandsList => Brand.dummyBrands;

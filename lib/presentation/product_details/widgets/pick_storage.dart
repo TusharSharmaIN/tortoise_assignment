@@ -13,7 +13,7 @@ class PickStorage extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'Storage',
+            'Storage'.toUpperCase(),
             style: BaseTextStyles.textSmallBold.copyWith(
               color: BaseColors.slateGrey,
             ),

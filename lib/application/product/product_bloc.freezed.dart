@@ -55,7 +55,7 @@ extension ProductEventPatterns on ProductEvent {
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( _Init value)?  init,TResult Function( _OnBrandSelectionUpdate value)?  onBrandSelectionUpdate,TResult Function( _OnBrandSearchUpdate value)?  onBrandSearchUpdate,TResult Function( _OnBrandChipRemove value)?  onBrandChipRemove,TResult Function( _OnProductImageSlide value)?  onProductImageSlide,TResult Function( _OnColorSelected value)?  onColorSelected,TResult Function( _OnStorageSelected value)?  onStorageSelected,required TResult orElse(),}){
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( _Init value)?  init,TResult Function( _OnBrandSelectionUpdate value)?  onBrandSelectionUpdate,TResult Function( _OnBrandSearchUpdate value)?  onBrandSearchUpdate,TResult Function( _OnBrandChipRemove value)?  onBrandChipRemove,TResult Function( _OnProductImageSlide value)?  onProductImageSlide,TResult Function( _OnColorSelected value)?  onColorSelected,TResult Function( _OnStorageSelected value)?  onStorageSelected,TResult Function( _OnExpandToggled value)?  onExpandToggled,TResult Function( _OnResetFlow value)?  onResetFlow,required TResult orElse(),}){
 final _that = this;
 switch (_that) {
 case _Init() when init != null:
@@ -65,7 +65,9 @@ return onBrandSearchUpdate(_that);case _OnBrandChipRemove() when onBrandChipRemo
 return onBrandChipRemove(_that);case _OnProductImageSlide() when onProductImageSlide != null:
 return onProductImageSlide(_that);case _OnColorSelected() when onColorSelected != null:
 return onColorSelected(_that);case _OnStorageSelected() when onStorageSelected != null:
-return onStorageSelected(_that);case _:
+return onStorageSelected(_that);case _OnExpandToggled() when onExpandToggled != null:
+return onExpandToggled(_that);case _OnResetFlow() when onResetFlow != null:
+return onResetFlow(_that);case _:
   return orElse();
 
 }
@@ -83,7 +85,7 @@ return onStorageSelected(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( _Init value)  init,required TResult Function( _OnBrandSelectionUpdate value)  onBrandSelectionUpdate,required TResult Function( _OnBrandSearchUpdate value)  onBrandSearchUpdate,required TResult Function( _OnBrandChipRemove value)  onBrandChipRemove,required TResult Function( _OnProductImageSlide value)  onProductImageSlide,required TResult Function( _OnColorSelected value)  onColorSelected,required TResult Function( _OnStorageSelected value)  onStorageSelected,}){
+@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( _Init value)  init,required TResult Function( _OnBrandSelectionUpdate value)  onBrandSelectionUpdate,required TResult Function( _OnBrandSearchUpdate value)  onBrandSearchUpdate,required TResult Function( _OnBrandChipRemove value)  onBrandChipRemove,required TResult Function( _OnProductImageSlide value)  onProductImageSlide,required TResult Function( _OnColorSelected value)  onColorSelected,required TResult Function( _OnStorageSelected value)  onStorageSelected,required TResult Function( _OnExpandToggled value)  onExpandToggled,required TResult Function( _OnResetFlow value)  onResetFlow,}){
 final _that = this;
 switch (_that) {
 case _Init():
@@ -93,7 +95,9 @@ return onBrandSearchUpdate(_that);case _OnBrandChipRemove():
 return onBrandChipRemove(_that);case _OnProductImageSlide():
 return onProductImageSlide(_that);case _OnColorSelected():
 return onColorSelected(_that);case _OnStorageSelected():
-return onStorageSelected(_that);case _:
+return onStorageSelected(_that);case _OnExpandToggled():
+return onExpandToggled(_that);case _OnResetFlow():
+return onResetFlow(_that);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -110,7 +114,7 @@ return onStorageSelected(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( _Init value)?  init,TResult? Function( _OnBrandSelectionUpdate value)?  onBrandSelectionUpdate,TResult? Function( _OnBrandSearchUpdate value)?  onBrandSearchUpdate,TResult? Function( _OnBrandChipRemove value)?  onBrandChipRemove,TResult? Function( _OnProductImageSlide value)?  onProductImageSlide,TResult? Function( _OnColorSelected value)?  onColorSelected,TResult? Function( _OnStorageSelected value)?  onStorageSelected,}){
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( _Init value)?  init,TResult? Function( _OnBrandSelectionUpdate value)?  onBrandSelectionUpdate,TResult? Function( _OnBrandSearchUpdate value)?  onBrandSearchUpdate,TResult? Function( _OnBrandChipRemove value)?  onBrandChipRemove,TResult? Function( _OnProductImageSlide value)?  onProductImageSlide,TResult? Function( _OnColorSelected value)?  onColorSelected,TResult? Function( _OnStorageSelected value)?  onStorageSelected,TResult? Function( _OnExpandToggled value)?  onExpandToggled,TResult? Function( _OnResetFlow value)?  onResetFlow,}){
 final _that = this;
 switch (_that) {
 case _Init() when init != null:
@@ -120,7 +124,9 @@ return onBrandSearchUpdate(_that);case _OnBrandChipRemove() when onBrandChipRemo
 return onBrandChipRemove(_that);case _OnProductImageSlide() when onProductImageSlide != null:
 return onProductImageSlide(_that);case _OnColorSelected() when onColorSelected != null:
 return onColorSelected(_that);case _OnStorageSelected() when onStorageSelected != null:
-return onStorageSelected(_that);case _:
+return onStorageSelected(_that);case _OnExpandToggled() when onExpandToggled != null:
+return onExpandToggled(_that);case _OnResetFlow() when onResetFlow != null:
+return onResetFlow(_that);case _:
   return null;
 
 }
@@ -137,7 +143,7 @@ return onStorageSelected(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  init,TResult Function( Brand value)?  onBrandSelectionUpdate,TResult Function( String value)?  onBrandSearchUpdate,TResult Function( String value)?  onBrandChipRemove,TResult Function( int index)?  onProductImageSlide,TResult Function( int index)?  onColorSelected,TResult Function( int index)?  onStorageSelected,required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  init,TResult Function( Brand value)?  onBrandSelectionUpdate,TResult Function( String value)?  onBrandSearchUpdate,TResult Function( String value)?  onBrandChipRemove,TResult Function( int index)?  onProductImageSlide,TResult Function( int index)?  onColorSelected,TResult Function( int index)?  onStorageSelected,TResult Function( ExpansionType type)?  onExpandToggled,TResult Function( FlowType flow)?  onResetFlow,required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Init() when init != null:
 return init();case _OnBrandSelectionUpdate() when onBrandSelectionUpdate != null:
@@ -146,7 +152,9 @@ return onBrandSearchUpdate(_that.value);case _OnBrandChipRemove() when onBrandCh
 return onBrandChipRemove(_that.value);case _OnProductImageSlide() when onProductImageSlide != null:
 return onProductImageSlide(_that.index);case _OnColorSelected() when onColorSelected != null:
 return onColorSelected(_that.index);case _OnStorageSelected() when onStorageSelected != null:
-return onStorageSelected(_that.index);case _:
+return onStorageSelected(_that.index);case _OnExpandToggled() when onExpandToggled != null:
+return onExpandToggled(_that.type);case _OnResetFlow() when onResetFlow != null:
+return onResetFlow(_that.flow);case _:
   return orElse();
 
 }
@@ -164,7 +172,7 @@ return onStorageSelected(_that.index);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  init,required TResult Function( Brand value)  onBrandSelectionUpdate,required TResult Function( String value)  onBrandSearchUpdate,required TResult Function( String value)  onBrandChipRemove,required TResult Function( int index)  onProductImageSlide,required TResult Function( int index)  onColorSelected,required TResult Function( int index)  onStorageSelected,}) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  init,required TResult Function( Brand value)  onBrandSelectionUpdate,required TResult Function( String value)  onBrandSearchUpdate,required TResult Function( String value)  onBrandChipRemove,required TResult Function( int index)  onProductImageSlide,required TResult Function( int index)  onColorSelected,required TResult Function( int index)  onStorageSelected,required TResult Function( ExpansionType type)  onExpandToggled,required TResult Function( FlowType flow)  onResetFlow,}) {final _that = this;
 switch (_that) {
 case _Init():
 return init();case _OnBrandSelectionUpdate():
@@ -173,7 +181,9 @@ return onBrandSearchUpdate(_that.value);case _OnBrandChipRemove():
 return onBrandChipRemove(_that.value);case _OnProductImageSlide():
 return onProductImageSlide(_that.index);case _OnColorSelected():
 return onColorSelected(_that.index);case _OnStorageSelected():
-return onStorageSelected(_that.index);case _:
+return onStorageSelected(_that.index);case _OnExpandToggled():
+return onExpandToggled(_that.type);case _OnResetFlow():
+return onResetFlow(_that.flow);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -190,7 +200,7 @@ return onStorageSelected(_that.index);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  init,TResult? Function( Brand value)?  onBrandSelectionUpdate,TResult? Function( String value)?  onBrandSearchUpdate,TResult? Function( String value)?  onBrandChipRemove,TResult? Function( int index)?  onProductImageSlide,TResult? Function( int index)?  onColorSelected,TResult? Function( int index)?  onStorageSelected,}) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  init,TResult? Function( Brand value)?  onBrandSelectionUpdate,TResult? Function( String value)?  onBrandSearchUpdate,TResult? Function( String value)?  onBrandChipRemove,TResult? Function( int index)?  onProductImageSlide,TResult? Function( int index)?  onColorSelected,TResult? Function( int index)?  onStorageSelected,TResult? Function( ExpansionType type)?  onExpandToggled,TResult? Function( FlowType flow)?  onResetFlow,}) {final _that = this;
 switch (_that) {
 case _Init() when init != null:
 return init();case _OnBrandSelectionUpdate() when onBrandSelectionUpdate != null:
@@ -199,7 +209,9 @@ return onBrandSearchUpdate(_that.value);case _OnBrandChipRemove() when onBrandCh
 return onBrandChipRemove(_that.value);case _OnProductImageSlide() when onProductImageSlide != null:
 return onProductImageSlide(_that.index);case _OnColorSelected() when onColorSelected != null:
 return onColorSelected(_that.index);case _OnStorageSelected() when onStorageSelected != null:
-return onStorageSelected(_that.index);case _:
+return onStorageSelected(_that.index);case _OnExpandToggled() when onExpandToggled != null:
+return onExpandToggled(_that.type);case _OnResetFlow() when onResetFlow != null:
+return onResetFlow(_that.flow);case _:
   return null;
 
 }
@@ -645,9 +657,141 @@ as int,
 }
 
 /// @nodoc
+
+
+class _OnExpandToggled implements ProductEvent {
+  const _OnExpandToggled({required this.type});
+  
+
+ final  ExpansionType type;
+
+/// Create a copy of ProductEvent
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$OnExpandToggledCopyWith<_OnExpandToggled> get copyWith => __$OnExpandToggledCopyWithImpl<_OnExpandToggled>(this, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _OnExpandToggled&&(identical(other.type, type) || other.type == type));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,type);
+
+@override
+String toString() {
+  return 'ProductEvent.onExpandToggled(type: $type)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$OnExpandToggledCopyWith<$Res> implements $ProductEventCopyWith<$Res> {
+  factory _$OnExpandToggledCopyWith(_OnExpandToggled value, $Res Function(_OnExpandToggled) _then) = __$OnExpandToggledCopyWithImpl;
+@useResult
+$Res call({
+ ExpansionType type
+});
+
+
+
+
+}
+/// @nodoc
+class __$OnExpandToggledCopyWithImpl<$Res>
+    implements _$OnExpandToggledCopyWith<$Res> {
+  __$OnExpandToggledCopyWithImpl(this._self, this._then);
+
+  final _OnExpandToggled _self;
+  final $Res Function(_OnExpandToggled) _then;
+
+/// Create a copy of ProductEvent
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? type = null,}) {
+  return _then(_OnExpandToggled(
+type: null == type ? _self.type : type // ignore: cast_nullable_to_non_nullable
+as ExpansionType,
+  ));
+}
+
+
+}
+
+/// @nodoc
+
+
+class _OnResetFlow implements ProductEvent {
+  const _OnResetFlow({required this.flow});
+  
+
+ final  FlowType flow;
+
+/// Create a copy of ProductEvent
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$OnResetFlowCopyWith<_OnResetFlow> get copyWith => __$OnResetFlowCopyWithImpl<_OnResetFlow>(this, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _OnResetFlow&&(identical(other.flow, flow) || other.flow == flow));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,flow);
+
+@override
+String toString() {
+  return 'ProductEvent.onResetFlow(flow: $flow)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$OnResetFlowCopyWith<$Res> implements $ProductEventCopyWith<$Res> {
+  factory _$OnResetFlowCopyWith(_OnResetFlow value, $Res Function(_OnResetFlow) _then) = __$OnResetFlowCopyWithImpl;
+@useResult
+$Res call({
+ FlowType flow
+});
+
+
+
+
+}
+/// @nodoc
+class __$OnResetFlowCopyWithImpl<$Res>
+    implements _$OnResetFlowCopyWith<$Res> {
+  __$OnResetFlowCopyWithImpl(this._self, this._then);
+
+  final _OnResetFlow _self;
+  final $Res Function(_OnResetFlow) _then;
+
+/// Create a copy of ProductEvent
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? flow = null,}) {
+  return _then(_OnResetFlow(
+flow: null == flow ? _self.flow : flow // ignore: cast_nullable_to_non_nullable
+as FlowType,
+  ));
+}
+
+
+}
+
+/// @nodoc
 mixin _$ProductState {
 
- Brand get selectedBrand; List<String> get selectedEnteredBrands; List<Brand> get selectedBrands; int get currentProductImageIndex; int get selectedColorIndex; int get selectedStorageIndex;
+ Brand get selectedBrand; List<String> get selectedEnteredBrands; List<Brand> get selectedBrands; int get currentProductImageIndex; int get selectedColorIndex; int get selectedStorageIndex; bool get isSpecificationExpanded; bool get isImageBannerExpanded; bool get isEffectivePriceExpanded;
 /// Create a copy of ProductState
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -658,16 +802,16 @@ $ProductStateCopyWith<ProductState> get copyWith => _$ProductStateCopyWithImpl<P
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is ProductState&&(identical(other.selectedBrand, selectedBrand) || other.selectedBrand == selectedBrand)&&const DeepCollectionEquality().equals(other.selectedEnteredBrands, selectedEnteredBrands)&&const DeepCollectionEquality().equals(other.selectedBrands, selectedBrands)&&(identical(other.currentProductImageIndex, currentProductImageIndex) || other.currentProductImageIndex == currentProductImageIndex)&&(identical(other.selectedColorIndex, selectedColorIndex) || other.selectedColorIndex == selectedColorIndex)&&(identical(other.selectedStorageIndex, selectedStorageIndex) || other.selectedStorageIndex == selectedStorageIndex));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ProductState&&(identical(other.selectedBrand, selectedBrand) || other.selectedBrand == selectedBrand)&&const DeepCollectionEquality().equals(other.selectedEnteredBrands, selectedEnteredBrands)&&const DeepCollectionEquality().equals(other.selectedBrands, selectedBrands)&&(identical(other.currentProductImageIndex, currentProductImageIndex) || other.currentProductImageIndex == currentProductImageIndex)&&(identical(other.selectedColorIndex, selectedColorIndex) || other.selectedColorIndex == selectedColorIndex)&&(identical(other.selectedStorageIndex, selectedStorageIndex) || other.selectedStorageIndex == selectedStorageIndex)&&(identical(other.isSpecificationExpanded, isSpecificationExpanded) || other.isSpecificationExpanded == isSpecificationExpanded)&&(identical(other.isImageBannerExpanded, isImageBannerExpanded) || other.isImageBannerExpanded == isImageBannerExpanded)&&(identical(other.isEffectivePriceExpanded, isEffectivePriceExpanded) || other.isEffectivePriceExpanded == isEffectivePriceExpanded));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,selectedBrand,const DeepCollectionEquality().hash(selectedEnteredBrands),const DeepCollectionEquality().hash(selectedBrands),currentProductImageIndex,selectedColorIndex,selectedStorageIndex);
+int get hashCode => Object.hash(runtimeType,selectedBrand,const DeepCollectionEquality().hash(selectedEnteredBrands),const DeepCollectionEquality().hash(selectedBrands),currentProductImageIndex,selectedColorIndex,selectedStorageIndex,isSpecificationExpanded,isImageBannerExpanded,isEffectivePriceExpanded);
 
 @override
 String toString() {
-  return 'ProductState(selectedBrand: $selectedBrand, selectedEnteredBrands: $selectedEnteredBrands, selectedBrands: $selectedBrands, currentProductImageIndex: $currentProductImageIndex, selectedColorIndex: $selectedColorIndex, selectedStorageIndex: $selectedStorageIndex)';
+  return 'ProductState(selectedBrand: $selectedBrand, selectedEnteredBrands: $selectedEnteredBrands, selectedBrands: $selectedBrands, currentProductImageIndex: $currentProductImageIndex, selectedColorIndex: $selectedColorIndex, selectedStorageIndex: $selectedStorageIndex, isSpecificationExpanded: $isSpecificationExpanded, isImageBannerExpanded: $isImageBannerExpanded, isEffectivePriceExpanded: $isEffectivePriceExpanded)';
 }
 
 
@@ -678,7 +822,7 @@ abstract mixin class $ProductStateCopyWith<$Res>  {
   factory $ProductStateCopyWith(ProductState value, $Res Function(ProductState) _then) = _$ProductStateCopyWithImpl;
 @useResult
 $Res call({
- Brand selectedBrand, List<String> selectedEnteredBrands, List<Brand> selectedBrands, int currentProductImageIndex, int selectedColorIndex, int selectedStorageIndex
+ Brand selectedBrand, List<String> selectedEnteredBrands, List<Brand> selectedBrands, int currentProductImageIndex, int selectedColorIndex, int selectedStorageIndex, bool isSpecificationExpanded, bool isImageBannerExpanded, bool isEffectivePriceExpanded
 });
 
 
@@ -695,7 +839,7 @@ class _$ProductStateCopyWithImpl<$Res>
 
 /// Create a copy of ProductState
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? selectedBrand = null,Object? selectedEnteredBrands = null,Object? selectedBrands = null,Object? currentProductImageIndex = null,Object? selectedColorIndex = null,Object? selectedStorageIndex = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? selectedBrand = null,Object? selectedEnteredBrands = null,Object? selectedBrands = null,Object? currentProductImageIndex = null,Object? selectedColorIndex = null,Object? selectedStorageIndex = null,Object? isSpecificationExpanded = null,Object? isImageBannerExpanded = null,Object? isEffectivePriceExpanded = null,}) {
   return _then(_self.copyWith(
 selectedBrand: null == selectedBrand ? _self.selectedBrand : selectedBrand // ignore: cast_nullable_to_non_nullable
 as Brand,selectedEnteredBrands: null == selectedEnteredBrands ? _self.selectedEnteredBrands : selectedEnteredBrands // ignore: cast_nullable_to_non_nullable
@@ -703,7 +847,10 @@ as List<String>,selectedBrands: null == selectedBrands ? _self.selectedBrands : 
 as List<Brand>,currentProductImageIndex: null == currentProductImageIndex ? _self.currentProductImageIndex : currentProductImageIndex // ignore: cast_nullable_to_non_nullable
 as int,selectedColorIndex: null == selectedColorIndex ? _self.selectedColorIndex : selectedColorIndex // ignore: cast_nullable_to_non_nullable
 as int,selectedStorageIndex: null == selectedStorageIndex ? _self.selectedStorageIndex : selectedStorageIndex // ignore: cast_nullable_to_non_nullable
-as int,
+as int,isSpecificationExpanded: null == isSpecificationExpanded ? _self.isSpecificationExpanded : isSpecificationExpanded // ignore: cast_nullable_to_non_nullable
+as bool,isImageBannerExpanded: null == isImageBannerExpanded ? _self.isImageBannerExpanded : isImageBannerExpanded // ignore: cast_nullable_to_non_nullable
+as bool,isEffectivePriceExpanded: null == isEffectivePriceExpanded ? _self.isEffectivePriceExpanded : isEffectivePriceExpanded // ignore: cast_nullable_to_non_nullable
+as bool,
   ));
 }
 /// Create a copy of ProductState
@@ -797,10 +944,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( Brand selectedBrand,  List<String> selectedEnteredBrands,  List<Brand> selectedBrands,  int currentProductImageIndex,  int selectedColorIndex,  int selectedStorageIndex)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( Brand selectedBrand,  List<String> selectedEnteredBrands,  List<Brand> selectedBrands,  int currentProductImageIndex,  int selectedColorIndex,  int selectedStorageIndex,  bool isSpecificationExpanded,  bool isImageBannerExpanded,  bool isEffectivePriceExpanded)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _ProductState() when $default != null:
-return $default(_that.selectedBrand,_that.selectedEnteredBrands,_that.selectedBrands,_that.currentProductImageIndex,_that.selectedColorIndex,_that.selectedStorageIndex);case _:
+return $default(_that.selectedBrand,_that.selectedEnteredBrands,_that.selectedBrands,_that.currentProductImageIndex,_that.selectedColorIndex,_that.selectedStorageIndex,_that.isSpecificationExpanded,_that.isImageBannerExpanded,_that.isEffectivePriceExpanded);case _:
   return orElse();
 
 }
@@ -818,10 +965,10 @@ return $default(_that.selectedBrand,_that.selectedEnteredBrands,_that.selectedBr
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( Brand selectedBrand,  List<String> selectedEnteredBrands,  List<Brand> selectedBrands,  int currentProductImageIndex,  int selectedColorIndex,  int selectedStorageIndex)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( Brand selectedBrand,  List<String> selectedEnteredBrands,  List<Brand> selectedBrands,  int currentProductImageIndex,  int selectedColorIndex,  int selectedStorageIndex,  bool isSpecificationExpanded,  bool isImageBannerExpanded,  bool isEffectivePriceExpanded)  $default,) {final _that = this;
 switch (_that) {
 case _ProductState():
-return $default(_that.selectedBrand,_that.selectedEnteredBrands,_that.selectedBrands,_that.currentProductImageIndex,_that.selectedColorIndex,_that.selectedStorageIndex);case _:
+return $default(_that.selectedBrand,_that.selectedEnteredBrands,_that.selectedBrands,_that.currentProductImageIndex,_that.selectedColorIndex,_that.selectedStorageIndex,_that.isSpecificationExpanded,_that.isImageBannerExpanded,_that.isEffectivePriceExpanded);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -838,10 +985,10 @@ return $default(_that.selectedBrand,_that.selectedEnteredBrands,_that.selectedBr
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( Brand selectedBrand,  List<String> selectedEnteredBrands,  List<Brand> selectedBrands,  int currentProductImageIndex,  int selectedColorIndex,  int selectedStorageIndex)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( Brand selectedBrand,  List<String> selectedEnteredBrands,  List<Brand> selectedBrands,  int currentProductImageIndex,  int selectedColorIndex,  int selectedStorageIndex,  bool isSpecificationExpanded,  bool isImageBannerExpanded,  bool isEffectivePriceExpanded)?  $default,) {final _that = this;
 switch (_that) {
 case _ProductState() when $default != null:
-return $default(_that.selectedBrand,_that.selectedEnteredBrands,_that.selectedBrands,_that.currentProductImageIndex,_that.selectedColorIndex,_that.selectedStorageIndex);case _:
+return $default(_that.selectedBrand,_that.selectedEnteredBrands,_that.selectedBrands,_that.currentProductImageIndex,_that.selectedColorIndex,_that.selectedStorageIndex,_that.isSpecificationExpanded,_that.isImageBannerExpanded,_that.isEffectivePriceExpanded);case _:
   return null;
 
 }
@@ -853,7 +1000,7 @@ return $default(_that.selectedBrand,_that.selectedEnteredBrands,_that.selectedBr
 
 
 class _ProductState extends ProductState {
-  const _ProductState({required this.selectedBrand, required final  List<String> selectedEnteredBrands, required final  List<Brand> selectedBrands, required this.currentProductImageIndex, required this.selectedColorIndex, required this.selectedStorageIndex}): _selectedEnteredBrands = selectedEnteredBrands,_selectedBrands = selectedBrands,super._();
+  const _ProductState({required this.selectedBrand, required final  List<String> selectedEnteredBrands, required final  List<Brand> selectedBrands, required this.currentProductImageIndex, required this.selectedColorIndex, required this.selectedStorageIndex, required this.isSpecificationExpanded, required this.isImageBannerExpanded, required this.isEffectivePriceExpanded}): _selectedEnteredBrands = selectedEnteredBrands,_selectedBrands = selectedBrands,super._();
   
 
 @override final  Brand selectedBrand;
@@ -874,6 +1021,9 @@ class _ProductState extends ProductState {
 @override final  int currentProductImageIndex;
 @override final  int selectedColorIndex;
 @override final  int selectedStorageIndex;
+@override final  bool isSpecificationExpanded;
+@override final  bool isImageBannerExpanded;
+@override final  bool isEffectivePriceExpanded;
 
 /// Create a copy of ProductState
 /// with the given fields replaced by the non-null parameter values.
@@ -885,16 +1035,16 @@ _$ProductStateCopyWith<_ProductState> get copyWith => __$ProductStateCopyWithImp
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ProductState&&(identical(other.selectedBrand, selectedBrand) || other.selectedBrand == selectedBrand)&&const DeepCollectionEquality().equals(other._selectedEnteredBrands, _selectedEnteredBrands)&&const DeepCollectionEquality().equals(other._selectedBrands, _selectedBrands)&&(identical(other.currentProductImageIndex, currentProductImageIndex) || other.currentProductImageIndex == currentProductImageIndex)&&(identical(other.selectedColorIndex, selectedColorIndex) || other.selectedColorIndex == selectedColorIndex)&&(identical(other.selectedStorageIndex, selectedStorageIndex) || other.selectedStorageIndex == selectedStorageIndex));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ProductState&&(identical(other.selectedBrand, selectedBrand) || other.selectedBrand == selectedBrand)&&const DeepCollectionEquality().equals(other._selectedEnteredBrands, _selectedEnteredBrands)&&const DeepCollectionEquality().equals(other._selectedBrands, _selectedBrands)&&(identical(other.currentProductImageIndex, currentProductImageIndex) || other.currentProductImageIndex == currentProductImageIndex)&&(identical(other.selectedColorIndex, selectedColorIndex) || other.selectedColorIndex == selectedColorIndex)&&(identical(other.selectedStorageIndex, selectedStorageIndex) || other.selectedStorageIndex == selectedStorageIndex)&&(identical(other.isSpecificationExpanded, isSpecificationExpanded) || other.isSpecificationExpanded == isSpecificationExpanded)&&(identical(other.isImageBannerExpanded, isImageBannerExpanded) || other.isImageBannerExpanded == isImageBannerExpanded)&&(identical(other.isEffectivePriceExpanded, isEffectivePriceExpanded) || other.isEffectivePriceExpanded == isEffectivePriceExpanded));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,selectedBrand,const DeepCollectionEquality().hash(_selectedEnteredBrands),const DeepCollectionEquality().hash(_selectedBrands),currentProductImageIndex,selectedColorIndex,selectedStorageIndex);
+int get hashCode => Object.hash(runtimeType,selectedBrand,const DeepCollectionEquality().hash(_selectedEnteredBrands),const DeepCollectionEquality().hash(_selectedBrands),currentProductImageIndex,selectedColorIndex,selectedStorageIndex,isSpecificationExpanded,isImageBannerExpanded,isEffectivePriceExpanded);
 
 @override
 String toString() {
-  return 'ProductState(selectedBrand: $selectedBrand, selectedEnteredBrands: $selectedEnteredBrands, selectedBrands: $selectedBrands, currentProductImageIndex: $currentProductImageIndex, selectedColorIndex: $selectedColorIndex, selectedStorageIndex: $selectedStorageIndex)';
+  return 'ProductState(selectedBrand: $selectedBrand, selectedEnteredBrands: $selectedEnteredBrands, selectedBrands: $selectedBrands, currentProductImageIndex: $currentProductImageIndex, selectedColorIndex: $selectedColorIndex, selectedStorageIndex: $selectedStorageIndex, isSpecificationExpanded: $isSpecificationExpanded, isImageBannerExpanded: $isImageBannerExpanded, isEffectivePriceExpanded: $isEffectivePriceExpanded)';
 }
 
 
@@ -905,7 +1055,7 @@ abstract mixin class _$ProductStateCopyWith<$Res> implements $ProductStateCopyWi
   factory _$ProductStateCopyWith(_ProductState value, $Res Function(_ProductState) _then) = __$ProductStateCopyWithImpl;
 @override @useResult
 $Res call({
- Brand selectedBrand, List<String> selectedEnteredBrands, List<Brand> selectedBrands, int currentProductImageIndex, int selectedColorIndex, int selectedStorageIndex
+ Brand selectedBrand, List<String> selectedEnteredBrands, List<Brand> selectedBrands, int currentProductImageIndex, int selectedColorIndex, int selectedStorageIndex, bool isSpecificationExpanded, bool isImageBannerExpanded, bool isEffectivePriceExpanded
 });
 
 
@@ -922,7 +1072,7 @@ class __$ProductStateCopyWithImpl<$Res>
 
 /// Create a copy of ProductState
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? selectedBrand = null,Object? selectedEnteredBrands = null,Object? selectedBrands = null,Object? currentProductImageIndex = null,Object? selectedColorIndex = null,Object? selectedStorageIndex = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? selectedBrand = null,Object? selectedEnteredBrands = null,Object? selectedBrands = null,Object? currentProductImageIndex = null,Object? selectedColorIndex = null,Object? selectedStorageIndex = null,Object? isSpecificationExpanded = null,Object? isImageBannerExpanded = null,Object? isEffectivePriceExpanded = null,}) {
   return _then(_ProductState(
 selectedBrand: null == selectedBrand ? _self.selectedBrand : selectedBrand // ignore: cast_nullable_to_non_nullable
 as Brand,selectedEnteredBrands: null == selectedEnteredBrands ? _self._selectedEnteredBrands : selectedEnteredBrands // ignore: cast_nullable_to_non_nullable
@@ -930,7 +1080,10 @@ as List<String>,selectedBrands: null == selectedBrands ? _self._selectedBrands :
 as List<Brand>,currentProductImageIndex: null == currentProductImageIndex ? _self.currentProductImageIndex : currentProductImageIndex // ignore: cast_nullable_to_non_nullable
 as int,selectedColorIndex: null == selectedColorIndex ? _self.selectedColorIndex : selectedColorIndex // ignore: cast_nullable_to_non_nullable
 as int,selectedStorageIndex: null == selectedStorageIndex ? _self.selectedStorageIndex : selectedStorageIndex // ignore: cast_nullable_to_non_nullable
-as int,
+as int,isSpecificationExpanded: null == isSpecificationExpanded ? _self.isSpecificationExpanded : isSpecificationExpanded // ignore: cast_nullable_to_non_nullable
+as bool,isImageBannerExpanded: null == isImageBannerExpanded ? _self.isImageBannerExpanded : isImageBannerExpanded // ignore: cast_nullable_to_non_nullable
+as bool,isEffectivePriceExpanded: null == isEffectivePriceExpanded ? _self.isEffectivePriceExpanded : isEffectivePriceExpanded // ignore: cast_nullable_to_non_nullable
+as bool,
   ));
 }
 

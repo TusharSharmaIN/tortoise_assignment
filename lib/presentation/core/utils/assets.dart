@@ -22,4 +22,5 @@ class Assets {
   static const iphone16 = '${imagesDir}iphone_16.png';
   static const macbookAir2024 = '${imagesDir}macbook_air_2024.png';
   static const macbookPro = '${imagesDir}macbook_pro.png';
+  static const iphone16Banner = '${imagesDir}iphone_16_banner.png';
 }
