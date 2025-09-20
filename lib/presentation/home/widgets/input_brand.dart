@@ -94,6 +94,7 @@ class _BrandChips extends StatelessWidget {
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(8),
                 ),
+                side: BorderSide.none,
                 deleteIcon: const Icon(
                   PhosphorIconsFill.xCircle,
                   size: 18,
