@@ -55,9 +55,6 @@ class _InputBrandState extends State<InputBrand> {
                       _BrandInputField(
                         controller: _controller,
                         focusNode: _focusNode,
-                        hintText: state.selectedBrands.isEmpty
-                            ? 'Enter brand'
-                            : '',
                       ),
                     ],
                   ),
@@ -114,14 +111,9 @@ class _BrandChips extends StatelessWidget {
 }
 
 class _BrandInputField extends StatelessWidget {
-  const _BrandInputField({
-    required this.controller,
-    required this.focusNode,
-    required this.hintText,
-  });
+  const _BrandInputField({required this.controller, required this.focusNode});
   final TextEditingController controller;
   final FocusNode focusNode;
-  final String hintText;
 
   @override
   Widget build(BuildContext context) {
@@ -134,7 +126,6 @@ class _BrandInputField extends StatelessWidget {
         decoration: InputDecoration(
           isDense: true,
           border: InputBorder.none,
-          hintText: hintText,
           hintStyle: BaseTextStyles.textLargeSemiBold.copyWith(
             color: BaseColors.shadowGrey,
           ),
