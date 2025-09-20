@@ -1,16 +1,47 @@
-# tortoise_assignment
 
-A new Flutter project.
+# Tortoise Assignment
 
-## Getting Started
+## Run & Build APK
 
-This project is a starting point for a Flutter application.
+```sh
+flutter pub get
+flutter run
+# To build release APK:
+flutter build apk --release --flavor prod -t lib/main_prod.dart
+```
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Screenshots
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Screenshots are in the `screenshots/` folder in the root of the repository (not in assets/images, to avoid increasing APK size):
+
+**Home Page**
+
+<img src="screenshots/screen_1.png" width="180" alt="Home" />
+
+**Product Details Page**
+
+<img src="screenshots/screen_2.png" width="180" alt="Product Details 1" />
+<img src="screenshots/screen_3.png" width="180" alt="Product Details 2" />
+<img src="screenshots/screen_4.png" width="180" alt="Product Details 3" />
+<img src="screenshots/screen_5.png" width="180" alt="Effective Price" />
+
+## Download APK
+
+[Download latest release APK](https://github.com/TusharSharmaIN/tortoise_assignment/releases) <!-- Update this link if repo changes -->
+
+## Features
+
+- **Home Page**
+	- Search and catalogue
+		- Input search
+		- Pick from popular
+		- Pick product from selected brands
+- **Product Details Page**
+	- Product images
+	- Pick desired color
+	- Pick storage options
+	- Check full specifications
+	- Image banner
+- **Effective Price BottomSheet**
+	- Show effective price according to tax slab
