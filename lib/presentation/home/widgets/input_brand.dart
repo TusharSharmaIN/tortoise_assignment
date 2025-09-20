@@ -51,77 +51,13 @@ class _InputBrandState extends State<InputBrand> {
                   scrollDirection: Axis.horizontal,
                   child: Row(
                     children: [
-                      ...state.selectedEnteredBrands.map(
-                        (brandStr) => Padding(
-                          padding: const EdgeInsets.only(right: 8),
-                          child: Chip(
-                            label: Text(
-                              brandStr,
-                              style: BaseTextStyles.textLargeSemiBold.copyWith(
-                                color: BaseColors.black,
-                              ),
-                            ),
-                            padding: EdgeInsets.zero,
-                            backgroundColor: Colors.white,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(8),
-                            ),
-                            deleteIcon: const Icon(
-                              PhosphorIconsFill.xCircle,
-                              size: 18,
-                              color: Colors.black,
-                            ),
-                            onDeleted: () {
-                              context.read<ProductBloc>().add(
-                                ProductEvent.onBrandChipRemove(value: brandStr),
-                              );
-                            },
-                          ),
-                        ),
-                      ),
-                      ConstrainedBox(
-                        constraints: const BoxConstraints(
-                          minWidth: 60,
-                          maxWidth: 200,
-                        ),
-                        child: TextFormField(
-                          controller: _controller,
-                          focusNode: _focusNode,
-                          cursorColor: BaseColors.shadowGrey,
-                          decoration: InputDecoration(
-                            isDense: true,
-                            border: InputBorder.none,
-                            hintText: state.selectedBrands.isEmpty
-                                ? 'Enter brand'
-                                : '',
-                            hintStyle: BaseTextStyles.textLargeSemiBold
-                                .copyWith(color: BaseColors.shadowGrey),
-                            contentPadding: const EdgeInsets.symmetric(
-                              vertical: 12,
-                            ),
-                          ),
-                          onFieldSubmitted: (value) {
-                            if (value.trim().isNotEmpty) {
-                              context.read<ProductBloc>().add(
-                                ProductEvent.onBrandSearchUpdate(
-                                  value: value.trim(),
-                                ),
-                              );
-                              _controller.clear();
-                            }
-                          },
-                          onChanged: (value) {
-                            if (value.endsWith('\n')) {
-                              context.read<ProductBloc>().add(
-                                ProductEvent.onBrandSearchUpdate(
-                                  value: value.trim(),
-                                ),
-                              );
-                              _controller.clear();
-                            }
-                          },
-                          textInputAction: TextInputAction.done,
-                        ),
+                      _BrandChips(brands: state.selectedEnteredBrands),
+                      _BrandInputField(
+                        controller: _controller,
+                        focusNode: _focusNode,
+                        hintText: state.selectedBrands.isEmpty
+                            ? 'Enter brand'
+                            : '',
                       ),
                     ],
                   ),
@@ -131,6 +67,96 @@ class _InputBrandState extends State<InputBrand> {
           ),
         );
       },
+    );
+  }
+}
+
+class _BrandChips extends StatelessWidget {
+  const _BrandChips({required this.brands});
+  final List<String> brands;
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: brands
+          .map(
+            (brandStr) => Padding(
+              padding: const EdgeInsets.only(right: 8),
+              child: Chip(
+                label: Text(
+                  brandStr,
+                  style: BaseTextStyles.textLargeSemiBold.copyWith(
+                    color: BaseColors.black,
+                  ),
+                ),
+                padding: EdgeInsets.zero,
+                backgroundColor: Colors.white,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                deleteIcon: const Icon(
+                  PhosphorIconsFill.xCircle,
+                  size: 18,
+                  color: Colors.black,
+                ),
+                onDeleted: () {
+                  context.read<ProductBloc>().add(
+                    ProductEvent.onBrandChipRemove(value: brandStr),
+                  );
+                },
+              ),
+            ),
+          )
+          .toList(),
+    );
+  }
+}
+
+class _BrandInputField extends StatelessWidget {
+  const _BrandInputField({
+    required this.controller,
+    required this.focusNode,
+    required this.hintText,
+  });
+  final TextEditingController controller;
+  final FocusNode focusNode;
+  final String hintText;
+
+  @override
+  Widget build(BuildContext context) {
+    return ConstrainedBox(
+      constraints: const BoxConstraints(minWidth: 60, maxWidth: 200),
+      child: TextFormField(
+        controller: controller,
+        focusNode: focusNode,
+        cursorColor: BaseColors.shadowGrey,
+        decoration: InputDecoration(
+          isDense: true,
+          border: InputBorder.none,
+          hintText: hintText,
+          hintStyle: BaseTextStyles.textLargeSemiBold.copyWith(
+            color: BaseColors.shadowGrey,
+          ),
+          contentPadding: const EdgeInsets.symmetric(vertical: 12),
+        ),
+        onFieldSubmitted: (value) {
+          if (value.trim().isNotEmpty) {
+            context.read<ProductBloc>().add(
+              ProductEvent.onBrandSearchUpdate(value: value.trim()),
+            );
+            controller.clear();
+          }
+        },
+        onChanged: (value) {
+          if (value.endsWith('\n')) {
+            context.read<ProductBloc>().add(
+              ProductEvent.onBrandSearchUpdate(value: value.trim()),
+            );
+            controller.clear();
+          }
+        },
+        textInputAction: TextInputAction.done,
+      ),
     );
   }
 }
