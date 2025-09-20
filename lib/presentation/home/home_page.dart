@@ -4,6 +4,8 @@ import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
 import 'package:tortoise_assignment/application/product/product_bloc.dart';
+import 'package:tortoise_assignment/domain/product/entities/brands.dart';
+import 'package:tortoise_assignment/domain/product/entities/product.dart';
 import 'package:tortoise_assignment/presentation/core/widgets/custom_app_bar.dart';
 import 'package:tortoise_assignment/presentation/router/route.dart';
 import 'package:tortoise_assignment/presentation/theme/base_colors.dart';
@@ -24,7 +26,19 @@ class HomePage extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
-            CustomAppBar.widgetTitle(widgetTitle: const InputBrand()),
+            Container(
+              child: CustomAppBar.widgetTitle(widgetTitle: const InputBrand()),
+              decoration: BoxDecoration(
+                color: BaseColors.white,
+                boxShadow: [
+                  BoxShadow(
+                    color: BaseColors.black.withValues(alpha: 0.05),
+                    blurRadius: 4,
+                    offset: const Offset(0, 2),
+                  ),
+                ],
+              ),
+            ),
             const Expanded(child: HomePageWidget()),
           ],
         ),

@@ -13,8 +13,11 @@ class ShippingEstimate extends StatelessWidget {
       child: Text.rich(
         TextSpan(
           children: [
-            WidgetSpan(
-              child: Icon(PhosphorIcons.truck(), color: BaseColors.darkyellow),
+            const WidgetSpan(
+              child: Icon(
+                PhosphorIconsRegular.truck,
+                color: BaseColors.darkyellow,
+              ),
               alignment: PlaceholderAlignment.middle,
             ),
             const WidgetSpan(child: SizedBox(width: 12)),

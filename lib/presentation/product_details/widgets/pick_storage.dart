@@ -34,7 +34,7 @@ class PickStorage extends StatelessWidget {
                 runSpacing: 12,
                 children: List.generate(storageOptions.length, (index) {
                   final isSelected = index == state.selectedStorageIndex;
-                  return StorageTile(
+                  return _StorageTile(
                     index: index,
                     isSelected: isSelected,
                     storageOptions: storageOptions,
@@ -49,9 +49,8 @@ class PickStorage extends StatelessWidget {
   }
 }
 
-class StorageTile extends StatelessWidget {
-  const StorageTile({
-    super.key,
+class _StorageTile extends StatelessWidget {
+  const _StorageTile({
     required this.index,
     required this.isSelected,
     required this.storageOptions,
@@ -79,35 +78,19 @@ class StorageTile extends StatelessWidget {
             color: isSelected ? BaseColors.brightGreen : BaseColors.borderGrey,
             width: isSelected ? 2 : 1,
           ),
+          boxShadow: [
+            if (!isSelected)
+              BoxShadow(
+                color: BaseColors.black.withValues(alpha: 0.05),
+                blurRadius: 2,
+                offset: const Offset(0, 2),
+              ),
+          ],
         ),
         child: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Container(
-              width: 14,
-              height: 14,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                border: Border.all(
-                  color: isSelected
-                      ? BaseColors.brightGreen
-                      : BaseColors.borderGrey,
-                  width: 2,
-                ),
-              ),
-              child: isSelected
-                  ? Center(
-                      child: Container(
-                        width: 8,
-                        height: 8,
-                        decoration: const BoxDecoration(
-                          color: BaseColors.white,
-                          shape: BoxShape.circle,
-                        ),
-                      ),
-                    )
-                  : null,
-            ),
+            RadioIcon(isSelected: isSelected),
             const SizedBox(width: 8),
             Flexible(
               child: Text(
@@ -121,6 +104,39 @@ class StorageTile extends StatelessWidget {
           ],
         ),
       ),
+    );
+  }
+}
+
+class RadioIcon extends StatelessWidget {
+  const RadioIcon({super.key, required this.isSelected});
+
+  final bool isSelected;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 14,
+      height: 14,
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        border: Border.all(
+          color: isSelected ? BaseColors.brightGreen : BaseColors.slateGrey,
+          width: isSelected ? 4 : 1,
+        ),
+      ),
+      child: isSelected
+          ? Center(
+              child: Container(
+                width: 8,
+                height: 8,
+                decoration: const BoxDecoration(
+                  color: BaseColors.white,
+                  shape: BoxShape.circle,
+                ),
+              ),
+            )
+          : null,
     );
   }
 }

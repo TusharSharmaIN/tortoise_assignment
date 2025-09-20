@@ -40,8 +40,8 @@ class _InputBrandState extends State<InputBrand> {
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Icon(
-                PhosphorIcons.magnifyingGlass(),
+              const Icon(
+                PhosphorIconsRegular.magnifyingGlass,
                 size: 24,
                 color: BaseColors.black,
               ),
@@ -66,8 +66,8 @@ class _InputBrandState extends State<InputBrand> {
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(8),
                             ),
-                            deleteIcon: Icon(
-                              PhosphorIcons.xCircle(PhosphorIconsStyle.fill),
+                            deleteIcon: const Icon(
+                              PhosphorIconsFill.xCircle,
                               size: 18,
                               color: Colors.black,
                             ),

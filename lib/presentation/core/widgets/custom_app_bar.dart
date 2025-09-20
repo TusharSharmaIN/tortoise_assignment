@@ -75,7 +75,7 @@ class AppBackButton extends StatelessWidget {
           foregroundColor: BaseColors.white,
         ),
         onPressed: () => _onPressed(context),
-        icon: Icon(PhosphorIcons.caretLeft()),
+        icon: const Icon(PhosphorIconsRegular.caretLeft),
       ),
     );
   }
